@@ -87,6 +87,10 @@
         {
           options.services.voiceSpeakerId = with lib; {
             enable = mkEnableOption "Speaker Identification API Server";
+            package = mkOption {
+              type = types.package;
+              default = self.package.default;
+            };
             host = mkOption {
               type = types.str;
               default = "127.0.0.1";
