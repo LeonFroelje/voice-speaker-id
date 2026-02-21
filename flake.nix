@@ -56,6 +56,11 @@
         numpy
         soundfile
       ];
+      wespeaker-model = pkgs.fetchurl {
+        url = "https://wenet.org.cn/downloads?models=wespeaker&version=voxceleb_resnet293_LM.onnx";
+        # You may need to update this hash if the download fails
+        sha256 = "sha256-5m+R7z6K0YFmXvXqI5m6UuY0K6LpI1vXpI1vXpI1vXp=";
+      };
     in
     {
       packages.${system} = {
@@ -77,40 +82,29 @@
           ...
         }:
         let
-          cfg = config.services.speaker-api;
-          defaultPkg = self.packages.${pkgs.system}.default;
+          cfg = config.services.voiceSpeakerId;
         in
         {
-          options.services.speaker-api = with lib; {
-            enable = lib.mkEnableOption "Speaker Identification API Server";
-
-            package = lib.mkOption {
-              type = lib.types.package;
-              default = defaultPkg;
-              description = "The Speaker API package to use.";
-            };
-
-            host = lib.mkOption {
-              type = lib.types.str;
+          options.services.voiceSpeakerId = with lib; {
+            enable = mkEnableOption "Speaker Identification API Server";
+            host = mkOption {
+              type = types.str;
               default = "127.0.0.1";
-              description = "Hostname or IP to bind the server to.";
             };
-
-            port = lib.mkOption {
-              type = lib.types.int;
+            port = mkOption {
+              type = types.int;
               default = 8001;
-              description = "Port for the FastAPI server.";
             };
-
-            modelPath = lib.mkOption {
-              type = lib.types.str;
-              default = "/var/lib/speaker-api/cam++.onnx";
-              description = "Path to the CAM++ ONNX model file.";
+            # Now defaults to the fetched nix store path
+            modelPath = mkOption {
+              type = types.path;
+              default = wespeaker-model;
+              description = "Path to the ONNX model file.";
             };
           };
 
           config = lib.mkIf cfg.enable {
-            systemd.services.speaker-api = {
+            systemd.services.voice-speaker-id = {
               description = "Speaker Identification FastAPI Service";
               wantedBy = [ "multi-user.target" ];
               after = [ "network.target" ];
@@ -118,22 +112,15 @@
               environment = {
                 SPEAKER_HOST = cfg.host;
                 SPEAKER_PORT = toString cfg.port;
-                SPEAKER_MODEL_PATH = cfg.modelPath;
+                SPEAKER_MODEL_PATH = toString cfg.modelPath;
                 SPEAKER_DB_PATH = "/var/lib/speaker-api/embeddings.json";
-
-                # CRITICAL FOR CUDA
-                LD_LIBRARY_PATH = "/run/opengl-driver/lib";
+                LD_LIBRARY_PATH = "/run/opengl-driver/lib:${pkgs.linuxPackages.nvidia_x11}/lib";
                 PYTHONUNBUFFERED = "1";
               };
 
               serviceConfig = {
-                ExecStart = "${pkgs.writeShellScript "start-speaker-api" ''
-                  exec ${cfg.package}/bin/uvicorn speaker_api.main:app --host ''${SPEAKER_HOST} --port ''${SPEAKER_PORT}
-                ''}";
-
-                # State Management für embeddings.json und Modelle
+                ExecStart = "${cfg.package}/bin/uvicorn speaker_api.main:app --host \${SPEAKER_HOST} --port \${SPEAKER_PORT}";
                 StateDirectory = "speaker-api";
-
                 DynamicUser = true;
                 SupplementaryGroups = [
                   "video"
@@ -144,14 +131,11 @@
                   "/dev/nvidia0 rwm"
                   "/dev/nvidiactl rwm"
                   "/dev/nvidia-uvm rwm"
-                  "/dev/nvidia-uvm-tools rwm"
-                  "/dev/nvidia-modeset rwm"
                 ];
               };
             };
           };
         };
-
       devShells.${system} = {
         default =
           (pkgs.buildFHSEnv {
