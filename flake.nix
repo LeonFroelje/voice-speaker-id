@@ -56,11 +56,7 @@
         numpy
         soundfile
       ];
-      wespeaker-model = pkgs.fetchurl {
-        url = "https://wenet.org.cn/downloads?models=wespeaker&version=voxceleb_resnet293_LM.onnx";
-        # You may need to update this hash if the download fails
-        sha256 = "sha256-5m+R7z6K0YFmXvXqI5m6UuY0K6LpI1vXpI1vXpI1vXp=";
-      };
+      wespeaker-model = ./voxblink2_samresnet100_ft.onnx;
     in
     {
       packages.${system} = {
