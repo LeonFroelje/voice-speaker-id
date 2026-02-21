@@ -119,7 +119,7 @@
               };
 
               serviceConfig = {
-                ExecStart = "${cfg.package}/bin/uvicorn speaker_api.main:app --host \${SPEAKER_HOST} --port \${SPEAKER_PORT}";
+                ExecStart = "${cfg.package}/bin/speaker-api --host \${SPEAKER_HOST} --port \${SPEAKER_PORT}";
                 StateDirectory = "speaker-api";
                 DynamicUser = true;
                 SupplementaryGroups = [
