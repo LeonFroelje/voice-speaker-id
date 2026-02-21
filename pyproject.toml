@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "speaker-api"
+version = "0.1.0"
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "python-multipart",
+    "pydantic",
+    "pydantic-settings",
+    "onnxruntime",
+    "torchaudio",
+    "torch",
+    "numpy"
+]
+
+[project.scripts]
+speaker-api = "main:start"
+[tool.setuptools]
+# Explicitly list modules because of the flat layout
+py-modules = [
+    "main",
+    "config"
+]

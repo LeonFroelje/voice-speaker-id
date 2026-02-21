@@ -1,0 +1,4 @@
+result
+*.onnx
+embeddings.json
+*.wav
