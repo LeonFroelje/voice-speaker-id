@@ -89,7 +89,7 @@
             enable = mkEnableOption "Speaker Identification API Server";
             package = mkOption {
               type = types.package;
-              default = self.packages.default;
+              default = self.packages.${pkgs.system}.default;
             };
             host = mkOption {
               type = types.str;
