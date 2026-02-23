@@ -1,18 +1,32 @@
 import argparse
 import os
-from pydantic import Field
+from typing import Optional
+from pydantic import Field, SecretStr
 from pydantic_settings import BaseSettings, SettingsConfigDict
-
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
 class SpeakerSettings(BaseSettings):
-    # --- Server Settings ---
-    host: str = Field(
-        default="127.0.0.1",
-        description="The Hostname or IP address to bind the server to",
+    # --- MQTT Connection ---
+    mqtt_host: str = Field(
+        default="localhost", description="Mosquitto broker IP/Hostname"
     )
-    port: int = Field(default=8001, description="The port of the FastAPI server")
+    mqtt_port: int = Field(default=1883, description="Mosquitto broker port")
+    mqtt_user: Optional[str] = Field(
+        default=None, description="Username used to authenticate with mqtt broker"
+    )
+    mqtt_password: Optional[str] = Field(
+        default=None, description="Password used to authenticate with mqtt broker"
+    )
+
+    # --- Object Storage (S3 Compatible) ---
+    s3_endpoint: str = Field(
+        default="http://localhost:3900", description="URL to S3 storage"
+    )
+    s3_access_key: str = Field(default="your-access-key", description="S3 Access Key")
+    s3_secret_key: SecretStr = Field(
+        default="your-secret-key", description="S3 Secret Key"
+    )
+    s3_bucket: str = Field(default="voice-commands", description="S3 Bucket Name")
 
     # --- Model & Data Settings ---
     model_path: str = Field(
@@ -27,43 +41,39 @@ class SpeakerSettings(BaseSettings):
     # --- Algorithm Settings ---
     threshold: float = Field(
         default=0.5,
-        description="Cosine similarity threshold (0.0 to 1.0) for a positive identification",
+        description="Cosine similarity threshold (0.0 to 1.0)",
     )
     ema_alpha: float = Field(
         default=0.05,
-        description="Exponential Moving Average alpha for profile updates (0.0 to 1.0)",
+        description="Exponential Moving Average alpha for profile updates",
     )
 
-    # Pydantic Config: Tells it to read from environment variables with this prefix
+    # --- System ---
+    log_level: str = "INFO"
+
     model_config = SettingsConfigDict(env_prefix="SPEAKER_")
 
 
 def get_settings() -> SpeakerSettings:
-    """
-    Parses CLI arguments first, then initializes Settings.
-    Precedence: CLI Args > Environment Vars > .env file > Defaults
-    """
-    parser = argparse.ArgumentParser(description="Speaker Identification API")
+    parser = argparse.ArgumentParser(description="Speaker Identification Worker")
+    parser.add_argument("--mqtt-host", help="Hostname or IP address")
+    parser.add_argument("--mqtt-port", type=int, help="Port of the server")
+    parser.add_argument("--mqtt-user")
+    parser.add_argument("--mqtt-password")
 
-    # Add arguments for every field you want controllable via CLI
-    parser.add_argument("--host", help="Hostname or IP address")
-    parser.add_argument("--port", type=int, help="Port of the server")
+    parser.add_argument("--s3-endpoint", help="URL to S3 storage")
+    parser.add_argument("--s3-access-key", help="S3 Access Key")
+    parser.add_argument("--s3-secret-key", help="S3 Secret Key")
+    parser.add_argument("--s3-bucket", help="S3 Bucket Name")
     parser.add_argument("--model-path", help="Path to the ONNX model")
     parser.add_argument("--db-path", help="Path to the embeddings JSON file")
     parser.add_argument("--threshold", type=float, help="Cosine similarity threshold")
-    parser.add_argument(
-        "--ema-alpha", type=float, help="EMA alpha value for profile updates"
-    )
+    parser.add_argument("--ema-alpha", type=float, help="EMA alpha value")
+    parser.add_argument("--log-level", help="Logging Level (DEBUG, INFO, ERROR)")
 
     args, unknown = parser.parse_known_args()
-
-    # Create a dictionary of only the arguments that were actually provided via CLI
-    # We replace hyphens with underscores to match the Pydantic field names
     cli_args = {k.replace("-", "_"): v for k, v in vars(args).items() if v is not None}
-
-    # Initialize Settings
     return SpeakerSettings(**cli_args)
 
 
-# Create a global instance
 settings = get_settings()

@@ -43,9 +43,6 @@
 
       python = pkgs.python313; # 3.11 ist oft sicherer für Torch/ONNX in Nix
       apiDependencies = with python.pkgs; [
-        fastapi
-        uvicorn
-        python-multipart
         pydantic
         setuptools
         pydantic-settings
@@ -55,6 +52,8 @@
         torchaudio
         numpy
         soundfile
+        aiomqtt
+        boto3
       ];
       wespeaker-model = ./voxblink2_samresnet100_ft.onnx;
     in
