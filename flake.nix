@@ -214,7 +214,7 @@
                 EnvironmentFile = lib.mkIf (cfg.environmentFile != null) cfg.environmentFile;
 
                 # Kept as "speaker-api" to prevent losing your existing embeddings.json!
-                StateDirectory = cfg.voice-speaker-id;
+                StateDirectory = "voice-speaker-id";
 
                 DynamicUser = true;
                 SupplementaryGroups = [
