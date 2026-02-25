@@ -1,0 +1,484 @@
+Sourcing python-remove-tests-dir-hook
+Sourcing python-catch-conflicts-hook.sh
+Sourcing python-remove-bin-bytecode-hook.sh
+Sourcing pypa-build-hook
+Using pypaBuildPhase
+Sourcing python-runtime-deps-check-hook
+Using pythonRuntimeDepsCheckHook
+Sourcing pypa-install-hook
+Using pypaInstallPhase
+Sourcing python-imports-check-hook.sh
+Using pythonImportsCheckPhase
+Sourcing python-namespaces-hook
+Sourcing python-catch-conflicts-hook.sh
+Sourcing setup-cuda-hook
+source: sourcing removeStubsFromRunpathHook.bash (hostOffset=0) (targetOffset=1)
+source: added removeStubsFromRunpathHookRegistration to prePhases
+Sourcing fix-elf-files.sh
+Running phase: removeStubsFromRunpathHookRegistration
+@nix { "action": "setPhase", "phase": "removeStubsFromRunpathHookRegistration" }
+removeStubsFromRunpathHookRegistration: added removeStubsFromRunpath to postFixupHooks
+Running phase: unpackPhase
+@nix { "action": "setPhase", "phase": "unpackPhase" }
+unpacking source archive /nix/store/99n3gwg3ky0nvsz8jvxacba0bilj3wdd-source
+source root is source
+setting SOURCE_DATE_EPOCH to timestamp 315619200 of file "source/version.txt"
+Running phase: patchPhase
+@nix { "action": "setPhase", "phase": "patchPhase" }
+applying patch /nix/store/0zjbp5z2iv8ls4jshnlxnx5hijk9g0xc-0001-setup.py-propagate-cmakeFlags.patch
+patching file tools/setup_helpers/extension.py
+Hunk #2 succeeded at 109 with fuzz 2 (offset -33 lines).
+Running phase: updateAutotoolsGnuConfigScriptsPhase
+@nix { "action": "setPhase", "phase": "updateAutotoolsGnuConfigScriptsPhase" }
+Running phase: configurePhase
+@nix { "action": "setPhase", "phase": "configurePhase" }
+Executing setupCUDAToolkitCompilers
+no configure script, doing nothing
+Running phase: buildPhase
+@nix { "action": "setPhase", "phase": "buildPhase" }
+Executing pypaBuildPhase
+Creating a wheel...
+pypa build flags: --no-isolation --outdir dist/ --wheel
+[1m* Getting build dependencies for wheel...[0m
+W0225 18:30:36.590000 65 torch/utils/cpp_extension.py:117] No CUDA runtime is found, using CUDA_HOME='/nix/store/xyfh9ay0mfq93c8jrqhvl5kzvxsvqywc-cuda12.8-cuda_nvcc-12.8.93'
+-- Git branch: None
+-- Git SHA: None
+-- Git tag: None
+-- PyTorch dependency: torch
+-- Building version 2.10.0
+/nix/store/f3xi0pwk0lsqv918iwzzs6pph9c2s83n-python3.13-setuptools-80.10.1/lib/python3.13/site-packages/setuptools/dist.py:765: SetuptoolsDeprecationWarning: License classifiers are deprecated.
+!!
+
+        ********************************************************************************
+        Please consider removing the following classifiers in favor of a SPDX license expression:
+
+        License :: OSI Approved :: BSD License
+
+        See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license for details.
+        ********************************************************************************
+
+!!
+  self._finalize_license_expression()
+running egg_info
+creating src/torchaudio.egg-info
+writing src/torchaudio.egg-info/PKG-INFO
+writing dependency_links to src/torchaudio.egg-info/dependency_links.txt
+writing requirements to src/torchaudio.egg-info/requires.txt
+writing top-level names to src/torchaudio.egg-info/top_level.txt
+writing manifest file 'src/torchaudio.egg-info/SOURCES.txt'
+reading manifest file 'src/torchaudio.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file 'src/torchaudio.egg-info/SOURCES.txt'
+[1m* Building wheel...[0m
+W0225 18:30:37.550000 69 torch/utils/cpp_extension.py:117] No CUDA runtime is found, using CUDA_HOME='/nix/store/xyfh9ay0mfq93c8jrqhvl5kzvxsvqywc-cuda12.8-cuda_nvcc-12.8.93'
+-- Git branch: None
+-- Git SHA: None
+-- Git tag: None
+-- PyTorch dependency: torch
+-- Building version 2.10.0
+/nix/store/f3xi0pwk0lsqv918iwzzs6pph9c2s83n-python3.13-setuptools-80.10.1/lib/python3.13/site-packages/setuptools/dist.py:765: SetuptoolsDeprecationWarning: License classifiers are deprecated.
+!!
+
+        ********************************************************************************
+        Please consider removing the following classifiers in favor of a SPDX license expression:
+
+        License :: OSI Approved :: BSD License
+
+        See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license for details.
+        ********************************************************************************
+
+!!
+  self._finalize_license_expression()
+running bdist_wheel
+running build
+running build_py
+creating build/lib.linux-x86_64-cpython-313/torchaudio
+copying src/torchaudio/__init__.py -> build/lib.linux-x86_64-cpython-313/torchaudio
+copying src/torchaudio/version.py -> build/lib.linux-x86_64-cpython-313/torchaudio
+copying src/torchaudio/_torchcodec.py -> build/lib.linux-x86_64-cpython-313/torchaudio
+creating build/lib.linux-x86_64-cpython-313/torchaudio/_extension
+copying src/torchaudio/_extension/__init__.py -> build/lib.linux-x86_64-cpython-313/torchaudio/_extension
+copying src/torchaudio/_extension/utils.py -> build/lib.linux-x86_64-cpython-313/torchaudio/_extension
+creating build/lib.linux-x86_64-cpython-313/torchaudio/functional
+copying src/torchaudio/functional/functional.py -> build/lib.linux-x86_64-cpython-313/torchaudio/functional
+copying src/torchaudio/functional/__init__.py -> build/lib.linux-x86_64-cpython-313/torchaudio/functional
+copying src/torchaudio/functional/filtering.py -> build/lib.linux-x86_64-cpython-313/torchaudio/functional
+copying src/torchaudio/functional/_alignment.py -> build/lib.linux-x86_64-cpython-313/torchaudio/functional
+creating build/lib.linux-x86_64-cpython-313/torchaudio/_internal
+copying src/torchaudio/_internal/__init__.py -> build/lib.linux-x86_64-cpython-313/torchaudio/_internal
+copying src/torchaudio/_internal/module_utils.py -> build/lib.linux-x86_64-cpython-313/torchaudio/_internal
+creating build/lib.linux-x86_64-cpython-313/torchaudio/lib
+copying src/torchaudio/lib/__init__.py -> build/lib.linux-x86_64-cpython-313/torchaudio/lib
+creating build/lib.linux-x86_64-cpython-313/torchaudio/datasets
+copying src/torchaudio/datasets/cmuarctic.py -> build/lib.linux-x86_64-cpython-313/torchaudio/datasets
+copying src/torchaudio/datasets/ljspeech.py -> build/lib.linux-x86_64-cpython-313/torchaudio/datasets
+copying src/torchaudio/datasets/yesno.py -> build/lib.linux-x86_64-cpython-313/torchaudio/datasets
+copying src/torchaudio/datasets/librimix.py -> build/lib.linux-x86_64-cpython-313/torchaudio/datasets
+copying src/torchaudio/datasets/commonvoice.py -> build/lib.linux-x86_64-cpython-313/torchaudio/datasets
+copying src/torchaudio/datasets/librispeech_biasing.py -> build/lib.linux-x86_64-cpython-313/torchaudio/datasets
+copying src/torchaudio/datasets/voxceleb1.py -> build/lib.linux-x86_64-cpython-313/torchaudio/datasets
+copying src/torchaudio/datasets/__init__.py -> build/lib.linux-x86_64-cpython-313/torchaudio/datasets
+copying src/torchaudio/datasets/quesst14.py -> build/lib.linux-x86_64-cpython-313/torchaudio/datasets
+copying src/torchaudio/datasets/tedlium.py -> build/lib.linux-x86_64-cpython-313/torchaudio/datasets
+copying src/torchaudio/datasets/dr_vctk.py -> build/lib.linux-x86_64-cpython-313/torchaudio/datasets
+copying src/torchaudio/datasets/libritts.py -> build/lib.linux-x86_64-cpython-313/torchaudio/datasets
+copying src/torchaudio/datasets/musdb_hq.py -> build/lib.linux-x86_64-cpython-313/torchaudio/datasets
+copying src/torchaudio/datasets/fluentcommands.py -> build/lib.linux-x86_64-cpython-313/torchaudio/datasets
+copying src/torchaudio/datasets/librispeech.py -> build/lib.linux-x86_64-cpython-313/torchaudio/datasets
+copying src/torchaudio/datasets/vctk.py -> build/lib.linux-x86_64-cpython-313/torchaudio/datasets
+copying src/torchaudio/datasets/gtzan.py -> build/lib.linux-x86_64-cpython-313/torchaudio/datasets
+copying src/torchaudio/datasets/speechcommands.py -> build/lib.linux-x86_64-cpython-313/torchaudio/datasets
+copying src/torchaudio/datasets/utils.py -> build/lib.linux-x86_64-cpython-313/torchaudio/datasets
+copying src/torchaudio/datasets/snips.py -> build/lib.linux-x86_64-cpython-313/torchaudio/datasets
+copying src/torchaudio/datasets/librilight_limited.py -> build/lib.linux-x86_64-cpython-313/torchaudio/datasets
+copying src/torchaudio/datasets/iemocap.py -> build/lib.linux-x86_64-cpython-313/torchaudio/datasets
+copying src/torchaudio/datasets/cmudict.py -> build/lib.linux-x86_64-cpython-313/torchaudio/datasets
+creating build/lib.linux-x86_64-cpython-313/torchaudio/utils
+copying src/torchaudio/utils/__init__.py -> build/lib.linux-x86_64-cpython-313/torchaudio/utils
+copying src/torchaudio/utils/download.py -> build/lib.linux-x86_64-cpython-313/torchaudio/utils
+creating build/lib.linux-x86_64-cpython-313/torchaudio/pipelines
+copying src/torchaudio/pipelines/_source_separation_pipeline.py -> build/lib.linux-x86_64-cpython-313/torchaudio/pipelines
+copying src/torchaudio/pipelines/__init__.py -> build/lib.linux-x86_64-cpython-313/torchaudio/pipelines
+copying src/torchaudio/pipelines/rnnt_pipeline.py -> build/lib.linux-x86_64-cpython-313/torchaudio/pipelines
+copying src/torchaudio/pipelines/_squim_pipeline.py -> build/lib.linux-x86_64-cpython-313/torchaudio/pipelines
+creating build/lib.linux-x86_64-cpython-313/torchaudio/models
+copying src/torchaudio/models/tacotron2.py -> build/lib.linux-x86_64-cpython-313/torchaudio/models
+copying src/torchaudio/models/wav2letter.py -> build/lib.linux-x86_64-cpython-313/torchaudio/models
+copying src/torchaudio/models/conformer.py -> build/lib.linux-x86_64-cpython-313/torchaudio/models
+copying src/torchaudio/models/rnnt_decoder.py -> build/lib.linux-x86_64-cpython-313/torchaudio/models
+copying src/torchaudio/models/emformer.py -> build/lib.linux-x86_64-cpython-313/torchaudio/models
+copying src/torchaudio/models/__init__.py -> build/lib.linux-x86_64-cpython-313/torchaudio/models
+copying src/torchaudio/models/wavernn.py -> build/lib.linux-x86_64-cpython-313/torchaudio/models
+copying src/torchaudio/models/deepspeech.py -> build/lib.linux-x86_64-cpython-313/torchaudio/models
+copying src/torchaudio/models/_hdemucs.py -> build/lib.linux-x86_64-cpython-313/torchaudio/models
+copying src/torchaudio/models/conv_tasnet.py -> build/lib.linux-x86_64-cpython-313/torchaudio/models
+copying src/torchaudio/models/rnnt.py -> build/lib.linux-x86_64-cpython-313/torchaudio/models
+creating build/lib.linux-x86_64-cpython-313/torchaudio/transforms
+copying src/torchaudio/transforms/_multi_channel.py -> build/lib.linux-x86_64-cpython-313/torchaudio/transforms
+copying src/torchaudio/transforms/__init__.py -> build/lib.linux-x86_64-cpython-313/torchaudio/transforms
+copying src/torchaudio/transforms/_transforms.py -> build/lib.linux-x86_64-cpython-313/torchaudio/transforms
+creating build/lib.linux-x86_64-cpython-313/torchaudio/compliance
+copying src/torchaudio/compliance/__init__.py -> build/lib.linux-x86_64-cpython-313/torchaudio/compliance
+copying src/torchaudio/compliance/kaldi.py -> build/lib.linux-x86_64-cpython-313/torchaudio/compliance
+creating build/lib.linux-x86_64-cpython-313/torchaudio/pipelines/_wav2vec2
+copying src/torchaudio/pipelines/_wav2vec2/impl.py -> build/lib.linux-x86_64-cpython-313/torchaudio/pipelines/_wav2vec2
+copying src/torchaudio/pipelines/_wav2vec2/aligner.py -> build/lib.linux-x86_64-cpython-313/torchaudio/pipelines/_wav2vec2
+copying src/torchaudio/pipelines/_wav2vec2/__init__.py -> build/lib.linux-x86_64-cpython-313/torchaudio/pipelines/_wav2vec2
+copying src/torchaudio/pipelines/_wav2vec2/utils.py -> build/lib.linux-x86_64-cpython-313/torchaudio/pipelines/_wav2vec2
+creating build/lib.linux-x86_64-cpython-313/torchaudio/pipelines/_tts
+copying src/torchaudio/pipelines/_tts/impl.py -> build/lib.linux-x86_64-cpython-313/torchaudio/pipelines/_tts
+copying src/torchaudio/pipelines/_tts/__init__.py -> build/lib.linux-x86_64-cpython-313/torchaudio/pipelines/_tts
+copying src/torchaudio/pipelines/_tts/utils.py -> build/lib.linux-x86_64-cpython-313/torchaudio/pipelines/_tts
+copying src/torchaudio/pipelines/_tts/interface.py -> build/lib.linux-x86_64-cpython-313/torchaudio/pipelines/_tts
+creating build/lib.linux-x86_64-cpython-313/torchaudio/models/squim
+copying src/torchaudio/models/squim/__init__.py -> build/lib.linux-x86_64-cpython-313/torchaudio/models/squim
+copying src/torchaudio/models/squim/subjective.py -> build/lib.linux-x86_64-cpython-313/torchaudio/models/squim
+copying src/torchaudio/models/squim/objective.py -> build/lib.linux-x86_64-cpython-313/torchaudio/models/squim
+creating build/lib.linux-x86_64-cpython-313/torchaudio/models/wav2vec2
+copying src/torchaudio/models/wav2vec2/model.py -> build/lib.linux-x86_64-cpython-313/torchaudio/models/wav2vec2
+copying src/torchaudio/models/wav2vec2/__init__.py -> build/lib.linux-x86_64-cpython-313/torchaudio/models/wav2vec2
+copying src/torchaudio/models/wav2vec2/wavlm_attention.py -> build/lib.linux-x86_64-cpython-313/torchaudio/models/wav2vec2
+copying src/torchaudio/models/wav2vec2/components.py -> build/lib.linux-x86_64-cpython-313/torchaudio/models/wav2vec2
+creating build/lib.linux-x86_64-cpython-313/torchaudio/models/decoder
+copying src/torchaudio/models/decoder/_cuda_ctc_decoder.py -> build/lib.linux-x86_64-cpython-313/torchaudio/models/decoder
+copying src/torchaudio/models/decoder/__init__.py -> build/lib.linux-x86_64-cpython-313/torchaudio/models/decoder
+copying src/torchaudio/models/decoder/_ctc_decoder.py -> build/lib.linux-x86_64-cpython-313/torchaudio/models/decoder
+creating build/lib.linux-x86_64-cpython-313/torchaudio/models/wav2vec2/utils
+copying src/torchaudio/models/wav2vec2/utils/__init__.py -> build/lib.linux-x86_64-cpython-313/torchaudio/models/wav2vec2/utils
+copying src/torchaudio/models/wav2vec2/utils/import_huggingface.py -> build/lib.linux-x86_64-cpython-313/torchaudio/models/wav2vec2/utils
+copying src/torchaudio/models/wav2vec2/utils/import_fairseq.py -> build/lib.linux-x86_64-cpython-313/torchaudio/models/wav2vec2/utils
+running build_ext
+[0mCMake Deprecation Warning at CMakeLists.txt:21 (cmake_policy):
+  The OLD behavior for policy CMP0135 will be removed from a future version
+  of CMake.
+
+  The cmake-policies(7) manual explains that the OLD behaviors of all
+  policies are deprecated and that a policy should be set to OLD only under
+  specific short-term circumstances.  Projects should be ported to the NEW
+  behavior and not rely on setting a policy to OLD.
+
+[0m
+-- The C compiler identification is GNU 14.3.0
+-- The CXX compiler identification is GNU 14.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /nix/store/4046341qhjk8j4bkxs7jhpvs099i812w-gcc-wrapper-14.3.0/bin/gcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /nix/store/4046341qhjk8j4bkxs7jhpvs099i812w-gcc-wrapper-14.3.0/bin/g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- The CUDA compiler identification is NVIDIA 12.8.93 with host compiler GNU 14.3.0
+-- Detecting CUDA compiler ABI info
+-- Detecting CUDA compiler ABI info - done
+-- Check for working CUDA compiler: /nix/store/xyfh9ay0mfq93c8jrqhvl5kzvxsvqywc-cuda12.8-cuda_nvcc-12.8.93/bin/nvcc - skipped
+-- Detecting CUDA compile features
+-- Detecting CUDA compile features - done
+-- Found CUDA: /nix/store/xyfh9ay0mfq93c8jrqhvl5kzvxsvqywc-cuda12.8-cuda_nvcc-12.8.93 (found version "12.8")
+-- Found CUDAToolkit: /nix/store/xyfh9ay0mfq93c8jrqhvl5kzvxsvqywc-cuda12.8-cuda_nvcc-12.8.93/include;/nix/store/bw0f0i28zmx26v7qcy75b8nghb0m7i8x-cuda12.8-libcublas-12.8.4.1-include/include (found version "12.8.93")
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- PyTorch: CUDA detected: 12.8
+-- PyTorch: CUDA nvcc is: /nix/store/xyfh9ay0mfq93c8jrqhvl5kzvxsvqywc-cuda12.8-cuda_nvcc-12.8.93/bin/nvcc
+-- PyTorch: CUDA toolkit directory: /nix/store/xyfh9ay0mfq93c8jrqhvl5kzvxsvqywc-cuda12.8-cuda_nvcc-12.8.93
+-- PyTorch: Header version is: 12.8
+-- Found Python: /nix/store/m1fw8l8y9ycxh5dzispbb7cwl6rra14l-python3-3.13.12/bin/python3.13 (found version "3.13.12") found components: Interpreter
+[33mCMake Warning at /nix/store/4a8qaqs9n4k39hyn7xzl6pnjwlgp3iwr-python3.13-torch-2.9.1-dev/share/cmake/Caffe2/public/cuda.cmake:140 (message):
+  Failed to compute shorthash for libnvrtc.so
+Call Stack (most recent call first):
+  /nix/store/4a8qaqs9n4k39hyn7xzl6pnjwlgp3iwr-python3.13-torch-2.9.1-dev/share/cmake/Caffe2/Caffe2Config.cmake:86 (include)
+  /nix/store/4a8qaqs9n4k39hyn7xzl6pnjwlgp3iwr-python3.13-torch-2.9.1-dev/share/cmake/Torch/TorchConfig.cmake:68 (find_package)
+  cmake/TorchAudioHelper.cmake:1 (find_package)
+  CMakeLists.txt:90 (include)
+
+[0m
+-- USE_CUDNN is set to 0. Compiling without cuDNN support
+-- USE_CUSPARSELT is set to 0. Compiling without cuSPARSELt support
+-- USE_CUDSS is set to 0. Compiling without cuDSS support
+-- USE_CUFILE is set to 0. Compiling without cuFile support
+[33mCMake Warning at /nix/store/4a8qaqs9n4k39hyn7xzl6pnjwlgp3iwr-python3.13-torch-2.9.1-dev/share/cmake/Caffe2/public/cuda.cmake:323 (message):
+  pytorch is not compatible with `CMAKE_CUDA_ARCHITECTURES` and will ignore
+  its value.  Please configure `TORCH_CUDA_ARCH_LIST` instead.
+Call Stack (most recent call first):
+  /nix/store/4a8qaqs9n4k39hyn7xzl6pnjwlgp3iwr-python3.13-torch-2.9.1-dev/share/cmake/Caffe2/Caffe2Config.cmake:86 (include)
+  /nix/store/4a8qaqs9n4k39hyn7xzl6pnjwlgp3iwr-python3.13-torch-2.9.1-dev/share/cmake/Torch/TorchConfig.cmake:68 (find_package)
+  cmake/TorchAudioHelper.cmake:1 (find_package)
+  CMakeLists.txt:90 (include)
+
+[0m
+-- Added CUDA NVCC flags for: -gencode;arch=compute_75,code=sm_75;-gencode;arch=compute_80,code=sm_80;-gencode;arch=compute_86,code=sm_86;-gencode;arch=compute_89,code=sm_89;-gencode;arch=compute_90,code=sm_90;-gencode;arch=compute_100,code=sm_100;-gencode;arch=compute_120,code=sm_120
+[33mCMake Warning at /nix/store/4a8qaqs9n4k39hyn7xzl6pnjwlgp3iwr-python3.13-torch-2.9.1-dev/share/cmake/Torch/TorchConfig.cmake:22 (message):
+  static library kineto_LIBRARY-NOTFOUND not found.
+Call Stack (most recent call first):
+  /nix/store/4a8qaqs9n4k39hyn7xzl6pnjwlgp3iwr-python3.13-torch-2.9.1-dev/share/cmake/Torch/TorchConfig.cmake:125 (append_torchlib_if_found)
+  cmake/TorchAudioHelper.cmake:1 (find_package)
+  CMakeLists.txt:90 (include)
+
+[0m
+-- Found Torch: /nix/store/7yc7fw78j4a6028jzmh5422i597mx6kg-python3.13-torch-2.9.1-lib/lib/libtorch.so
+-- Found OpenMP_C: -fopenmp (found version "4.5")
+-- Found OpenMP_CXX: -fopenmp (found version "4.5")
+-- Found OpenMP_CUDA: -fopenmp (found version "4.5")
+-- Found OpenMP: TRUE (found version "4.5")
+-- Could not find ccache. Consider installing ccache to speed up compilation.
+-- Configuring done (10.9s)
+-- Generating done (0.1s)
+[33mCMake Warning:
+  Manually-specified variables were not used by the project:
+
+    BUILD_CPP_TEST
+    BUILD_TORIO_PYTHON_EXTENSION
+
+[0m
+-- Build files have been written to: /build/source/build/temp.linux-x86_64-cpython-313
+Change Dir: '/build/source/build/temp.linux-x86_64-cpython-313'
+
+Run Build Command(s): /nix/store/96yrl0k5g0k6yjvvlaw93iib735mpj9c-python3.13-ninja-1.13.2/bin/ninja -v install
+[1/16] /nix/store/4046341qhjk8j4bkxs7jhpvs099i812w-gcc-wrapper-14.3.0/bin/g++ -DINCLUDE_ALIGN -DUSE_C10D_GLOO -DUSE_C10D_NCCL -DUSE_CUDA -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -Dlibtorchaudio_EXPORTS -I/build/source/src -isystem /nix/store/4a8qaqs9n4k39hyn7xzl6pnjwlgp3iwr-python3.13-torch-2.9.1-dev/include/torch/csrc/api/include -Wall  -DTORCH_TARGET_VERSION=0x020a000000000000 -O3 -DNDEBUG -std=gnu++17 -fPIC -fopenmp -MD -MT src/libtorchaudio/CMakeFiles/libtorchaudio.dir/lfilter.cpp.o -MF src/libtorchaudio/CMakeFiles/libtorchaudio.dir/lfilter.cpp.o.d -o src/libtorchaudio/CMakeFiles/libtorchaudio.dir/lfilter.cpp.o -c /build/source/src/libtorchaudio/lfilter.cpp
+[31mFAILED: [code=1] [0msrc/libtorchaudio/CMakeFiles/libtorchaudio.dir/lfilter.cpp.o 
+/nix/store/4046341qhjk8j4bkxs7jhpvs099i812w-gcc-wrapper-14.3.0/bin/g++ -DINCLUDE_ALIGN -DUSE_C10D_GLOO -DUSE_C10D_NCCL -DUSE_CUDA -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -Dlibtorchaudio_EXPORTS -I/build/source/src -isystem /nix/store/4a8qaqs9n4k39hyn7xzl6pnjwlgp3iwr-python3.13-torch-2.9.1-dev/include/torch/csrc/api/include -Wall  -DTORCH_TARGET_VERSION=0x020a000000000000 -O3 -DNDEBUG -std=gnu++17 -fPIC -fopenmp -MD -MT src/libtorchaudio/CMakeFiles/libtorchaudio.dir/lfilter.cpp.o -MF src/libtorchaudio/CMakeFiles/libtorchaudio.dir/lfilter.cpp.o.d -o src/libtorchaudio/CMakeFiles/libtorchaudio.dir/lfilter.cpp.o -c /build/source/src/libtorchaudio/lfilter.cpp
+In file included from /build/source/src/libtorchaudio/lfilter.cpp:1:
+/build/source/src/libtorchaudio/utils.h:3:10: fatal error: torch/csrc/stable/device.h: No such file or directory
+    3 | #include <torch/csrc/stable/device.h>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+[2/16] /nix/store/4046341qhjk8j4bkxs7jhpvs099i812w-gcc-wrapper-14.3.0/bin/g++ -DINCLUDE_ALIGN -DUSE_C10D_GLOO -DUSE_C10D_NCCL -DUSE_CUDA -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -Dlibtorchaudio_EXPORTS -I/build/source/src -isystem /nix/store/4a8qaqs9n4k39hyn7xzl6pnjwlgp3iwr-python3.13-torch-2.9.1-dev/include/torch/csrc/api/include -Wall  -DTORCH_TARGET_VERSION=0x020a000000000000 -O3 -DNDEBUG -std=gnu++17 -fPIC -fopenmp -MD -MT src/libtorchaudio/CMakeFiles/libtorchaudio.dir/forced_align/cpu/compute.cpp.o -MF src/libtorchaudio/CMakeFiles/libtorchaudio.dir/forced_align/cpu/compute.cpp.o.d -o src/libtorchaudio/CMakeFiles/libtorchaudio.dir/forced_align/cpu/compute.cpp.o -c /build/source/src/libtorchaudio/forced_align/cpu/compute.cpp
+[31mFAILED: [code=1] [0msrc/libtorchaudio/CMakeFiles/libtorchaudio.dir/forced_align/cpu/compute.cpp.o 
+/nix/store/4046341qhjk8j4bkxs7jhpvs099i812w-gcc-wrapper-14.3.0/bin/g++ -DINCLUDE_ALIGN -DUSE_C10D_GLOO -DUSE_C10D_NCCL -DUSE_CUDA -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -Dlibtorchaudio_EXPORTS -I/build/source/src -isystem /nix/store/4a8qaqs9n4k39hyn7xzl6pnjwlgp3iwr-python3.13-torch-2.9.1-dev/include/torch/csrc/api/include -Wall  -DTORCH_TARGET_VERSION=0x020a000000000000 -O3 -DNDEBUG -std=gnu++17 -fPIC -fopenmp -MD -MT src/libtorchaudio/CMakeFiles/libtorchaudio.dir/forced_align/cpu/compute.cpp.o -MF src/libtorchaudio/CMakeFiles/libtorchaudio.dir/forced_align/cpu/compute.cpp.o.d -o src/libtorchaudio/CMakeFiles/libtorchaudio.dir/forced_align/cpu/compute.cpp.o -c /build/source/src/libtorchaudio/forced_align/cpu/compute.cpp
+In file included from /build/source/src/libtorchaudio/forced_align/cpu/compute.cpp:1:
+/build/source/src/libtorchaudio/utils.h:3:10: fatal error: torch/csrc/stable/device.h: No such file or directory
+    3 | #include <torch/csrc/stable/device.h>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+[3/16] /nix/store/4046341qhjk8j4bkxs7jhpvs099i812w-gcc-wrapper-14.3.0/bin/g++ -DINCLUDE_ALIGN -DUSE_C10D_GLOO -DUSE_C10D_NCCL -DUSE_CUDA -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -Dlibtorchaudio_EXPORTS -I/build/source/src -isystem /nix/store/4a8qaqs9n4k39hyn7xzl6pnjwlgp3iwr-python3.13-torch-2.9.1-dev/include/torch/csrc/api/include -Wall  -DTORCH_TARGET_VERSION=0x020a000000000000 -O3 -DNDEBUG -std=gnu++17 -fPIC -fopenmp -MD -MT src/libtorchaudio/CMakeFiles/libtorchaudio.dir/utils.cpp.o -MF src/libtorchaudio/CMakeFiles/libtorchaudio.dir/utils.cpp.o.d -o src/libtorchaudio/CMakeFiles/libtorchaudio.dir/utils.cpp.o -c /build/source/src/libtorchaudio/utils.cpp
+[31mFAILED: [code=1] [0msrc/libtorchaudio/CMakeFiles/libtorchaudio.dir/utils.cpp.o 
+/nix/store/4046341qhjk8j4bkxs7jhpvs099i812w-gcc-wrapper-14.3.0/bin/g++ -DINCLUDE_ALIGN -DUSE_C10D_GLOO -DUSE_C10D_NCCL -DUSE_CUDA -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -Dlibtorchaudio_EXPORTS -I/build/source/src -isystem /nix/store/4a8qaqs9n4k39hyn7xzl6pnjwlgp3iwr-python3.13-torch-2.9.1-dev/include/torch/csrc/api/include -Wall  -DTORCH_TARGET_VERSION=0x020a000000000000 -O3 -DNDEBUG -std=gnu++17 -fPIC -fopenmp -MD -MT src/libtorchaudio/CMakeFiles/libtorchaudio.dir/utils.cpp.o -MF src/libtorchaudio/CMakeFiles/libtorchaudio.dir/utils.cpp.o.d -o src/libtorchaudio/CMakeFiles/libtorchaudio.dir/utils.cpp.o -c /build/source/src/libtorchaudio/utils.cpp
+In file included from /build/source/src/libtorchaudio/utils.cpp:1:
+/build/source/src/libtorchaudio/utils.h:3:10: fatal error: torch/csrc/stable/device.h: No such file or directory
+    3 | #include <torch/csrc/stable/device.h>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+[4/16] /nix/store/4046341qhjk8j4bkxs7jhpvs099i812w-gcc-wrapper-14.3.0/bin/g++ -DUSE_C10D_GLOO -DUSE_C10D_NCCL -DUSE_CUDA -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -D_torchaudio_EXPORTS -I/build/source/src -I/nix/store/m1fw8l8y9ycxh5dzispbb7cwl6rra14l-python3-3.13.12/include/python3.13 -isystem /nix/store/4a8qaqs9n4k39hyn7xzl6pnjwlgp3iwr-python3.13-torch-2.9.1-dev/include/torch/csrc/api/include -Wall  -DTORCH_TARGET_VERSION=0x020a000000000000 -O3 -DNDEBUG -std=gnu++17 -fPIC -fopenmp -MD -MT src/libtorchaudio/CMakeFiles/_torchaudio.dir/pybind/pybind.cpp.o -MF src/libtorchaudio/CMakeFiles/_torchaudio.dir/pybind/pybind.cpp.o.d -o src/libtorchaudio/CMakeFiles/_torchaudio.dir/pybind/pybind.cpp.o -c /build/source/src/libtorchaudio/pybind/pybind.cpp
+[31mFAILED: [code=1] [0msrc/libtorchaudio/CMakeFiles/_torchaudio.dir/pybind/pybind.cpp.o 
+/nix/store/4046341qhjk8j4bkxs7jhpvs099i812w-gcc-wrapper-14.3.0/bin/g++ -DUSE_C10D_GLOO -DUSE_C10D_NCCL -DUSE_CUDA -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -D_torchaudio_EXPORTS -I/build/source/src -I/nix/store/m1fw8l8y9ycxh5dzispbb7cwl6rra14l-python3-3.13.12/include/python3.13 -isystem /nix/store/4a8qaqs9n4k39hyn7xzl6pnjwlgp3iwr-python3.13-torch-2.9.1-dev/include/torch/csrc/api/include -Wall  -DTORCH_TARGET_VERSION=0x020a000000000000 -O3 -DNDEBUG -std=gnu++17 -fPIC -fopenmp -MD -MT src/libtorchaudio/CMakeFiles/_torchaudio.dir/pybind/pybind.cpp.o -MF src/libtorchaudio/CMakeFiles/_torchaudio.dir/pybind/pybind.cpp.o.d -o src/libtorchaudio/CMakeFiles/_torchaudio.dir/pybind/pybind.cpp.o -c /build/source/src/libtorchaudio/pybind/pybind.cpp
+In file included from /build/source/src/libtorchaudio/pybind/pybind.cpp:1:
+/build/source/src/libtorchaudio/utils.h:3:10: fatal error: torch/csrc/stable/device.h: No such file or directory
+    3 | #include <torch/csrc/stable/device.h>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+[5/16] /nix/store/4046341qhjk8j4bkxs7jhpvs099i812w-gcc-wrapper-14.3.0/bin/g++ -DINCLUDE_ALIGN -DUSE_C10D_GLOO -DUSE_C10D_NCCL -DUSE_CUDA -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -Dlibtorchaudio_EXPORTS -I/build/source/src -isystem /nix/store/4a8qaqs9n4k39hyn7xzl6pnjwlgp3iwr-python3.13-torch-2.9.1-dev/include/torch/csrc/api/include -Wall  -DTORCH_TARGET_VERSION=0x020a000000000000 -O3 -DNDEBUG -std=gnu++17 -fPIC -fopenmp -MD -MT src/libtorchaudio/CMakeFiles/libtorchaudio.dir/overdrive.cpp.o -MF src/libtorchaudio/CMakeFiles/libtorchaudio.dir/overdrive.cpp.o.d -o src/libtorchaudio/CMakeFiles/libtorchaudio.dir/overdrive.cpp.o -c /build/source/src/libtorchaudio/overdrive.cpp
+[31mFAILED: [code=1] [0msrc/libtorchaudio/CMakeFiles/libtorchaudio.dir/overdrive.cpp.o 
+/nix/store/4046341qhjk8j4bkxs7jhpvs099i812w-gcc-wrapper-14.3.0/bin/g++ -DINCLUDE_ALIGN -DUSE_C10D_GLOO -DUSE_C10D_NCCL -DUSE_CUDA -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -Dlibtorchaudio_EXPORTS -I/build/source/src -isystem /nix/store/4a8qaqs9n4k39hyn7xzl6pnjwlgp3iwr-python3.13-torch-2.9.1-dev/include/torch/csrc/api/include -Wall  -DTORCH_TARGET_VERSION=0x020a000000000000 -O3 -DNDEBUG -std=gnu++17 -fPIC -fopenmp -MD -MT src/libtorchaudio/CMakeFiles/libtorchaudio.dir/overdrive.cpp.o -MF src/libtorchaudio/CMakeFiles/libtorchaudio.dir/overdrive.cpp.o.d -o src/libtorchaudio/CMakeFiles/libtorchaudio.dir/overdrive.cpp.o -c /build/source/src/libtorchaudio/overdrive.cpp
+In file included from /build/source/src/libtorchaudio/overdrive.cpp:1:
+/build/source/src/libtorchaudio/utils.h:3:10: fatal error: torch/csrc/stable/device.h: No such file or directory
+    3 | #include <torch/csrc/stable/device.h>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+[6/16] /nix/store/xyfh9ay0mfq93c8jrqhvl5kzvxsvqywc-cuda12.8-cuda_nvcc-12.8.93/bin/nvcc -forward-unknown-to-host-compiler -ccbin=/nix/store/4046341qhjk8j4bkxs7jhpvs099i812w-gcc-wrapper-14.3.0/bin/c++ -DINCLUDE_ALIGN -DUSE_C10D_GLOO -DUSE_C10D_NCCL -DUSE_CUDA -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -Dlibtorchaudio_EXPORTS -I/build/source/src -isystem /nix/store/4a8qaqs9n4k39hyn7xzl6pnjwlgp3iwr-python3.13-torch-2.9.1-dev/include/torch/csrc/api/include -isystem /nix/store/xyfh9ay0mfq93c8jrqhvl5kzvxsvqywc-cuda12.8-cuda_nvcc-12.8.93/include -DCUDA_HAS_FP16=1     -D__CUDA_NO_HALF_OPERATORS__     -D__CUDA_NO_HALF_CONVERSIONS__     -D__CUDA_NO_HALF2_OPERATORS__ -DONNX_NAMESPACE=onnx_c2 -gencode arch=compute_75,code=sm_75 -gencode arch=compute_80,code=sm_80 -gencode arch=compute_86,code=sm_86 -gencode arch=compute_89,code=sm_89 -gencode arch=compute_90,code=sm_90 -gencode arch=compute_100,code=sm_100 -gencode arch=compute_120,code=sm_120 -Xcudafe --diag_suppress=cc_clobber_ignored,--diag_suppress=field_without_dll_interface,--diag_suppress=base_class_has_different_dll_interface,--diag_suppress=dll_interface_conflict_none_assumed,--diag_suppress=dll_interface_conflict_dllexport_assumed,--diag_suppress=bad_friend_decl --expt-relaxed-constexpr --expt-extended-lambda -O3 -DNDEBUG -std=c++17 -Xcompiler=-fPIC -MD -MT src/libtorchaudio/CMakeFiles/libtorchaudio.dir/forced_align/gpu/compute.cu.o -MF src/libtorchaudio/CMakeFiles/libtorchaudio.dir/forced_align/gpu/compute.cu.o.d -x cu -c /build/source/src/libtorchaudio/forced_align/gpu/compute.cu -o src/libtorchaudio/CMakeFiles/libtorchaudio.dir/forced_align/gpu/compute.cu.o
+[31mFAILED: [code=1] [0msrc/libtorchaudio/CMakeFiles/libtorchaudio.dir/forced_align/gpu/compute.cu.o 
+/nix/store/xyfh9ay0mfq93c8jrqhvl5kzvxsvqywc-cuda12.8-cuda_nvcc-12.8.93/bin/nvcc -forward-unknown-to-host-compiler -ccbin=/nix/store/4046341qhjk8j4bkxs7jhpvs099i812w-gcc-wrapper-14.3.0/bin/c++ -DINCLUDE_ALIGN -DUSE_C10D_GLOO -DUSE_C10D_NCCL -DUSE_CUDA -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -Dlibtorchaudio_EXPORTS -I/build/source/src -isystem /nix/store/4a8qaqs9n4k39hyn7xzl6pnjwlgp3iwr-python3.13-torch-2.9.1-dev/include/torch/csrc/api/include -isystem /nix/store/xyfh9ay0mfq93c8jrqhvl5kzvxsvqywc-cuda12.8-cuda_nvcc-12.8.93/include -DCUDA_HAS_FP16=1     -D__CUDA_NO_HALF_OPERATORS__     -D__CUDA_NO_HALF_CONVERSIONS__     -D__CUDA_NO_HALF2_OPERATORS__ -DONNX_NAMESPACE=onnx_c2 -gencode arch=compute_75,code=sm_75 -gencode arch=compute_80,code=sm_80 -gencode arch=compute_86,code=sm_86 -gencode arch=compute_89,code=sm_89 -gencode arch=compute_90,code=sm_90 -gencode arch=compute_100,code=sm_100 -gencode arch=compute_120,code=sm_120 -Xcudafe --diag_suppress=cc_clobber_ignored,--diag_suppress=field_without_dll_interface,--diag_suppress=base_class_has_different_dll_interface,--diag_suppress=dll_interface_conflict_none_assumed,--diag_suppress=dll_interface_conflict_dllexport_assumed,--diag_suppress=bad_friend_decl --expt-relaxed-constexpr --expt-extended-lambda -O3 -DNDEBUG -std=c++17 -Xcompiler=-fPIC -MD -MT src/libtorchaudio/CMakeFiles/libtorchaudio.dir/forced_align/gpu/compute.cu.o -MF src/libtorchaudio/CMakeFiles/libtorchaudio.dir/forced_align/gpu/compute.cu.o.d -x cu -c /build/source/src/libtorchaudio/forced_align/gpu/compute.cu -o src/libtorchaudio/CMakeFiles/libtorchaudio.dir/forced_align/gpu/compute.cu.o
+In file included from /build/source/src/libtorchaudio/forced_align/gpu/compute.cu:1:
+/build/source/src/libtorchaudio/cuda_utils.h:4:10: fatal error: torch/csrc/stable/c/shim.h: No such file or directory
+    4 | #include <torch/csrc/stable/c/shim.h>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+[7/16] /nix/store/xyfh9ay0mfq93c8jrqhvl5kzvxsvqywc-cuda12.8-cuda_nvcc-12.8.93/bin/nvcc -forward-unknown-to-host-compiler -ccbin=/nix/store/4046341qhjk8j4bkxs7jhpvs099i812w-gcc-wrapper-14.3.0/bin/c++ -DINCLUDE_ALIGN -DUSE_C10D_GLOO -DUSE_C10D_NCCL -DUSE_CUDA -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -Dlibtorchaudio_EXPORTS -I/build/source/src -isystem /nix/store/4a8qaqs9n4k39hyn7xzl6pnjwlgp3iwr-python3.13-torch-2.9.1-dev/include/torch/csrc/api/include -isystem /nix/store/xyfh9ay0mfq93c8jrqhvl5kzvxsvqywc-cuda12.8-cuda_nvcc-12.8.93/include -DCUDA_HAS_FP16=1     -D__CUDA_NO_HALF_OPERATORS__     -D__CUDA_NO_HALF_CONVERSIONS__     -D__CUDA_NO_HALF2_OPERATORS__ -DONNX_NAMESPACE=onnx_c2 -gencode arch=compute_75,code=sm_75 -gencode arch=compute_80,code=sm_80 -gencode arch=compute_86,code=sm_86 -gencode arch=compute_89,code=sm_89 -gencode arch=compute_90,code=sm_90 -gencode arch=compute_100,code=sm_100 -gencode arch=compute_120,code=sm_120 -Xcudafe --diag_suppress=cc_clobber_ignored,--diag_suppress=field_without_dll_interface,--diag_suppress=base_class_has_different_dll_interface,--diag_suppress=dll_interface_conflict_none_assumed,--diag_suppress=dll_interface_conflict_dllexport_assumed,--diag_suppress=bad_friend_decl --expt-relaxed-constexpr --expt-extended-lambda -O3 -DNDEBUG -std=c++17 -Xcompiler=-fPIC -MD -MT src/libtorchaudio/CMakeFiles/libtorchaudio.dir/iir_cuda.cu.o -MF src/libtorchaudio/CMakeFiles/libtorchaudio.dir/iir_cuda.cu.o.d -x cu -c /build/source/src/libtorchaudio/iir_cuda.cu -o src/libtorchaudio/CMakeFiles/libtorchaudio.dir/iir_cuda.cu.o
+[31mFAILED: [code=1] [0msrc/libtorchaudio/CMakeFiles/libtorchaudio.dir/iir_cuda.cu.o 
+/nix/store/xyfh9ay0mfq93c8jrqhvl5kzvxsvqywc-cuda12.8-cuda_nvcc-12.8.93/bin/nvcc -forward-unknown-to-host-compiler -ccbin=/nix/store/4046341qhjk8j4bkxs7jhpvs099i812w-gcc-wrapper-14.3.0/bin/c++ -DINCLUDE_ALIGN -DUSE_C10D_GLOO -DUSE_C10D_NCCL -DUSE_CUDA -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -Dlibtorchaudio_EXPORTS -I/build/source/src -isystem /nix/store/4a8qaqs9n4k39hyn7xzl6pnjwlgp3iwr-python3.13-torch-2.9.1-dev/include/torch/csrc/api/include -isystem /nix/store/xyfh9ay0mfq93c8jrqhvl5kzvxsvqywc-cuda12.8-cuda_nvcc-12.8.93/include -DCUDA_HAS_FP16=1     -D__CUDA_NO_HALF_OPERATORS__     -D__CUDA_NO_HALF_CONVERSIONS__     -D__CUDA_NO_HALF2_OPERATORS__ -DONNX_NAMESPACE=onnx_c2 -gencode arch=compute_75,code=sm_75 -gencode arch=compute_80,code=sm_80 -gencode arch=compute_86,code=sm_86 -gencode arch=compute_89,code=sm_89 -gencode arch=compute_90,code=sm_90 -gencode arch=compute_100,code=sm_100 -gencode arch=compute_120,code=sm_120 -Xcudafe --diag_suppress=cc_clobber_ignored,--diag_suppress=field_without_dll_interface,--diag_suppress=base_class_has_different_dll_interface,--diag_suppress=dll_interface_conflict_none_assumed,--diag_suppress=dll_interface_conflict_dllexport_assumed,--diag_suppress=bad_friend_decl --expt-relaxed-constexpr --expt-extended-lambda -O3 -DNDEBUG -std=c++17 -Xcompiler=-fPIC -MD -MT src/libtorchaudio/CMakeFiles/libtorchaudio.dir/iir_cuda.cu.o -MF src/libtorchaudio/CMakeFiles/libtorchaudio.dir/iir_cuda.cu.o.d -x cu -c /build/source/src/libtorchaudio/iir_cuda.cu -o src/libtorchaudio/CMakeFiles/libtorchaudio.dir/iir_cuda.cu.o
+In file included from /build/source/src/libtorchaudio/iir_cuda.cu:1:
+/build/source/src/libtorchaudio/utils.h:3:10: fatal error: torch/csrc/stable/device.h: No such file or directory
+    3 | #include <torch/csrc/stable/device.h>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+[8/16] /nix/store/4046341qhjk8j4bkxs7jhpvs099i812w-gcc-wrapper-14.3.0/bin/g++ -DUSE_CUDA -Dlibctc_prefix_decoder_EXPORTS -I/build/source/src -I/build/source/src/libtorchaudio/cuctc -Wall  -DTORCH_TARGET_VERSION=0x020a000000000000 -O3 -DNDEBUG -std=gnu++17 -fPIC -fvisibility=default -MD -MT src/libtorchaudio/cuctc/CMakeFiles/libctc_prefix_decoder.dir/src/ctc_prefix_decoder.cpp.o -MF src/libtorchaudio/cuctc/CMakeFiles/libctc_prefix_decoder.dir/src/ctc_prefix_decoder.cpp.o.d -o src/libtorchaudio/cuctc/CMakeFiles/libctc_prefix_decoder.dir/src/ctc_prefix_decoder.cpp.o -c /build/source/src/libtorchaudio/cuctc/src/ctc_prefix_decoder.cpp
+[9/16] /nix/store/4046341qhjk8j4bkxs7jhpvs099i812w-gcc-wrapper-14.3.0/bin/g++ -DINCLUDE_ALIGN -DUSE_C10D_GLOO -DUSE_C10D_NCCL -DUSE_CUDA -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -Dlibtorchaudio_EXPORTS -I/build/source/src -isystem /nix/store/4a8qaqs9n4k39hyn7xzl6pnjwlgp3iwr-python3.13-torch-2.9.1-dev/include/torch/csrc/api/include -Wall  -DTORCH_TARGET_VERSION=0x020a000000000000 -O3 -DNDEBUG -std=gnu++17 -fPIC -fopenmp -MD -MT src/libtorchaudio/CMakeFiles/libtorchaudio.dir/forced_align/compute.cpp.o -MF src/libtorchaudio/CMakeFiles/libtorchaudio.dir/forced_align/compute.cpp.o.d -o src/libtorchaudio/CMakeFiles/libtorchaudio.dir/forced_align/compute.cpp.o -c /build/source/src/libtorchaudio/forced_align/compute.cpp
+[10/16] /nix/store/4046341qhjk8j4bkxs7jhpvs099i812w-gcc-wrapper-14.3.0/bin/g++ -DUSE_CUDA -Dpybind11_prefixctc_EXPORTS -I/build/source/src -I/nix/store/m1fw8l8y9ycxh5dzispbb7cwl6rra14l-python3-3.13.12/include/python3.13 -I/build/source/src/libtorchaudio/cuctc -Wall  -DTORCH_TARGET_VERSION=0x020a000000000000 -O3 -DNDEBUG -std=gnu++17 -fPIC -fvisibility=default -MD -MT src/libtorchaudio/cuctc/CMakeFiles/pybind11_prefixctc.dir/src/python_binding.cpp.o -MF src/libtorchaudio/cuctc/CMakeFiles/pybind11_prefixctc.dir/src/python_binding.cpp.o.d -o src/libtorchaudio/cuctc/CMakeFiles/pybind11_prefixctc.dir/src/python_binding.cpp.o -c /build/source/src/libtorchaudio/cuctc/src/python_binding.cpp
+[11/16] /nix/store/xyfh9ay0mfq93c8jrqhvl5kzvxsvqywc-cuda12.8-cuda_nvcc-12.8.93/bin/nvcc -forward-unknown-to-host-compiler -ccbin=/nix/store/4046341qhjk8j4bkxs7jhpvs099i812w-gcc-wrapper-14.3.0/bin/c++ -DUSE_CUDA -Dlibctc_prefix_decoder_EXPORTS -I/build/source/src -I/build/source/src/libtorchaudio/cuctc -DCUDA_HAS_FP16=1     -D__CUDA_NO_HALF_OPERATORS__     -D__CUDA_NO_HALF_CONVERSIONS__     -D__CUDA_NO_HALF2_OPERATORS__ -DONNX_NAMESPACE=onnx_c2 -gencode arch=compute_75,code=sm_75 -gencode arch=compute_80,code=sm_80 -gencode arch=compute_86,code=sm_86 -gencode arch=compute_89,code=sm_89 -gencode arch=compute_90,code=sm_90 -gencode arch=compute_100,code=sm_100 -gencode arch=compute_120,code=sm_120 -Xcudafe --diag_suppress=cc_clobber_ignored,--diag_suppress=field_without_dll_interface,--diag_suppress=base_class_has_different_dll_interface,--diag_suppress=dll_interface_conflict_none_assumed,--diag_suppress=dll_interface_conflict_dllexport_assumed,--diag_suppress=bad_friend_decl --expt-relaxed-constexpr --expt-extended-lambda -O3 -DNDEBUG -std=c++17 -Xcompiler=-fPIC -MD -MT src/libtorchaudio/cuctc/CMakeFiles/libctc_prefix_decoder.dir/src/ctc_prefix_decoder_kernel_v2.cu.o -MF src/libtorchaudio/cuctc/CMakeFiles/libctc_prefix_decoder.dir/src/ctc_prefix_decoder_kernel_v2.cu.o.d -x cu -c /build/source/src/libtorchaudio/cuctc/src/ctc_prefix_decoder_kernel_v2.cu -o src/libtorchaudio/cuctc/CMakeFiles/libctc_prefix_decoder.dir/src/ctc_prefix_decoder_kernel_v2.cu.o
+/build/source/src/libtorchaudio/cuctc/src/ctc_prefix_decoder_kernel_v2.cu(398): warning #177-D: variable "MAX_SUPPORT_BEAM" was declared but never referenced
+    constexpr int MAX_SUPPORT_BEAM = 128;
+                  ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+/build/source/src/libtorchaudio/cuctc/src/ctc_prefix_decoder_kernel_v2.cu(398): warning #177-D: variable "MAX_SUPPORT_BEAM" was declared but never referenced
+    constexpr int MAX_SUPPORT_BEAM = 128;
+                  ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+/build/source/src/libtorchaudio/cuctc/src/ctc_prefix_decoder_kernel_v2.cu(398): warning #177-D: variable "MAX_SUPPORT_BEAM" was declared but never referenced
+    constexpr int MAX_SUPPORT_BEAM = 128;
+                  ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+/build/source/src/libtorchaudio/cuctc/src/ctc_prefix_decoder_kernel_v2.cu(398): warning #177-D: variable "MAX_SUPPORT_BEAM" was declared but never referenced
+    constexpr int MAX_SUPPORT_BEAM = 128;
+                  ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+/build/source/src/libtorchaudio/cuctc/src/ctc_prefix_decoder_kernel_v2.cu(398): warning #177-D: variable "MAX_SUPPORT_BEAM" was declared but never referenced
+    constexpr int MAX_SUPPORT_BEAM = 128;
+                  ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+/build/source/src/libtorchaudio/cuctc/src/ctc_prefix_decoder_kernel_v2.cu(398): warning #177-D: variable "MAX_SUPPORT_BEAM" was declared but never referenced
+    constexpr int MAX_SUPPORT_BEAM = 128;
+                  ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+/build/source/src/libtorchaudio/cuctc/src/ctc_prefix_decoder_kernel_v2.cu(398): warning #177-D: variable "MAX_SUPPORT_BEAM" was declared but never referenced
+    constexpr int MAX_SUPPORT_BEAM = 128;
+                  ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+ninja: build stopped: subcommand failed.
+
+Traceback (most recent call last):
+  File [35m"/nix/store/r4285bvfn3pdjrz2qv1s3yir5rjb3fmi-python3.13-pyproject-hooks-1.2.0/lib/python3.13/site-packages/pyproject_hooks/_in_process/_in_process.py"[0m, line [35m389[0m, in [35m<module>[0m
+    [31mmain[0m[1;31m()[0m
+    [31m~~~~[0m[1;31m^^[0m
+  File [35m"/nix/store/r4285bvfn3pdjrz2qv1s3yir5rjb3fmi-python3.13-pyproject-hooks-1.2.0/lib/python3.13/site-packages/pyproject_hooks/_in_process/_in_process.py"[0m, line [35m373[0m, in [35mmain[0m
+    json_out["return_val"] = [31mhook[0m[1;31m(**hook_input["kwargs"])[0m
+                             [31m~~~~[0m[1;31m^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  File [35m"/nix/store/r4285bvfn3pdjrz2qv1s3yir5rjb3fmi-python3.13-pyproject-hooks-1.2.0/lib/python3.13/site-packages/pyproject_hooks/_in_process/_in_process.py"[0m, line [35m280[0m, in [35mbuild_wheel[0m
+    return [31m_build_backend().build_wheel[0m[1;31m([0m
+           [31m~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^[0m
+        [1;31mwheel_directory, config_settings, metadata_directory[0m
+        [1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+    [1;31m)[0m
+    [1;31m^[0m
+  File [35m"/nix/store/f3xi0pwk0lsqv918iwzzs6pph9c2s83n-python3.13-setuptools-80.10.1/lib/python3.13/site-packages/setuptools/build_meta.py"[0m, line [35m436[0m, in [35mbuild_wheel[0m
+    return _build(['bdist_wheel'])
+  File [35m"/nix/store/f3xi0pwk0lsqv918iwzzs6pph9c2s83n-python3.13-setuptools-80.10.1/lib/python3.13/site-packages/setuptools/build_meta.py"[0m, line [35m427[0m, in [35m_build[0m
+    return [31mself._build_with_temp_dir[0m[1;31m([0m
+           [31m~~~~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^[0m
+        [1;31mcmd,[0m
+        [1;31m^^^^[0m
+    ...<3 lines>...
+        [1;31mself._arbitrary_args(config_settings),[0m
+        [1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+    [1;31m)[0m
+    [1;31m^[0m
+  File [35m"/nix/store/f3xi0pwk0lsqv918iwzzs6pph9c2s83n-python3.13-setuptools-80.10.1/lib/python3.13/site-packages/setuptools/build_meta.py"[0m, line [35m408[0m, in [35m_build_with_temp_dir[0m
+    [31mself.run_setup[0m[1;31m()[0m
+    [31m~~~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/nix/store/f3xi0pwk0lsqv918iwzzs6pph9c2s83n-python3.13-setuptools-80.10.1/lib/python3.13/site-packages/setuptools/build_meta.py"[0m, line [35m518[0m, in [35mrun_setup[0m
+    [31msuper().run_setup[0m[1;31m(setup_script=setup_script)[0m
+    [31m~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  File [35m"/nix/store/f3xi0pwk0lsqv918iwzzs6pph9c2s83n-python3.13-setuptools-80.10.1/lib/python3.13/site-packages/setuptools/build_meta.py"[0m, line [35m317[0m, in [35mrun_setup[0m
+    [31mexec[0m[1;31m(code, locals())[0m
+    [31m~~~~[0m[1;31m^^^^^^^^^^^^^^^^[0m
+  File [35m"<string>"[0m, line [35m144[0m, in [35m<module>[0m
+  File [35m"<string>"[0m, line [35m99[0m, in [35m_main[0m
+  File [35m"/nix/store/f3xi0pwk0lsqv918iwzzs6pph9c2s83n-python3.13-setuptools-80.10.1/lib/python3.13/site-packages/setuptools/__init__.py"[0m, line [35m117[0m, in [35msetup[0m
+    return [31mdistutils.core.setup[0m[1;31m(**attrs)[0m  # type: ignore[return-value]
+           [31m~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^[0m
+  File [35m"/nix/store/f3xi0pwk0lsqv918iwzzs6pph9c2s83n-python3.13-setuptools-80.10.1/lib/python3.13/site-packages/setuptools/_distutils/core.py"[0m, line [35m186[0m, in [35msetup[0m
+    return run_commands(dist)
+  File [35m"/nix/store/f3xi0pwk0lsqv918iwzzs6pph9c2s83n-python3.13-setuptools-80.10.1/lib/python3.13/site-packages/setuptools/_distutils/core.py"[0m, line [35m202[0m, in [35mrun_commands[0m
+    [31mdist.run_commands[0m[1;31m()[0m
+    [31m~~~~~~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/nix/store/f3xi0pwk0lsqv918iwzzs6pph9c2s83n-python3.13-setuptools-80.10.1/lib/python3.13/site-packages/setuptools/_distutils/dist.py"[0m, line [35m1002[0m, in [35mrun_commands[0m
+    [31mself.run_command[0m[1;31m(cmd)[0m
+    [31m~~~~~~~~~~~~~~~~[0m[1;31m^^^^^[0m
+  File [35m"/nix/store/f3xi0pwk0lsqv918iwzzs6pph9c2s83n-python3.13-setuptools-80.10.1/lib/python3.13/site-packages/setuptools/dist.py"[0m, line [35m1107[0m, in [35mrun_command[0m
+    [31msuper().run_command[0m[1;31m(command)[0m
+    [31m~~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^[0m
+  File [35m"/nix/store/f3xi0pwk0lsqv918iwzzs6pph9c2s83n-python3.13-setuptools-80.10.1/lib/python3.13/site-packages/setuptools/_distutils/dist.py"[0m, line [35m1021[0m, in [35mrun_command[0m
+    [31mcmd_obj.run[0m[1;31m()[0m
+    [31m~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/nix/store/f3xi0pwk0lsqv918iwzzs6pph9c2s83n-python3.13-setuptools-80.10.1/lib/python3.13/site-packages/setuptools/command/bdist_wheel.py"[0m, line [35m370[0m, in [35mrun[0m
+    [31mself.run_command[0m[1;31m("build")[0m
+    [31m~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^[0m
+  File [35m"/nix/store/f3xi0pwk0lsqv918iwzzs6pph9c2s83n-python3.13-setuptools-80.10.1/lib/python3.13/site-packages/setuptools/_distutils/cmd.py"[0m, line [35m357[0m, in [35mrun_command[0m
+    [31mself.distribution.run_command[0m[1;31m(command)[0m
+    [31m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^[0m
+  File [35m"/nix/store/f3xi0pwk0lsqv918iwzzs6pph9c2s83n-python3.13-setuptools-80.10.1/lib/python3.13/site-packages/setuptools/dist.py"[0m, line [35m1107[0m, in [35mrun_command[0m
+    [31msuper().run_command[0m[1;31m(command)[0m
+    [31m~~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^[0m
+  File [35m"/nix/store/f3xi0pwk0lsqv918iwzzs6pph9c2s83n-python3.13-setuptools-80.10.1/lib/python3.13/site-packages/setuptools/_distutils/dist.py"[0m, line [35m1021[0m, in [35mrun_command[0m
+    [31mcmd_obj.run[0m[1;31m()[0m
+    [31m~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/nix/store/f3xi0pwk0lsqv918iwzzs6pph9c2s83n-python3.13-setuptools-80.10.1/lib/python3.13/site-packages/setuptools/_distutils/command/build.py"[0m, line [35m135[0m, in [35mrun[0m
+    [31mself.run_command[0m[1;31m(cmd_name)[0m
+    [31m~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^[0m
+  File [35m"/nix/store/f3xi0pwk0lsqv918iwzzs6pph9c2s83n-python3.13-setuptools-80.10.1/lib/python3.13/site-packages/setuptools/_distutils/cmd.py"[0m, line [35m357[0m, in [35mrun_command[0m
+    [31mself.distribution.run_command[0m[1;31m(command)[0m
+    [31m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^[0m
+  File [35m"/nix/store/f3xi0pwk0lsqv918iwzzs6pph9c2s83n-python3.13-setuptools-80.10.1/lib/python3.13/site-packages/setuptools/dist.py"[0m, line [35m1107[0m, in [35mrun_command[0m
+    [31msuper().run_command[0m[1;31m(command)[0m
+    [31m~~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^[0m
+  File [35m"/nix/store/f3xi0pwk0lsqv918iwzzs6pph9c2s83n-python3.13-setuptools-80.10.1/lib/python3.13/site-packages/setuptools/_distutils/dist.py"[0m, line [35m1021[0m, in [35mrun_command[0m
+    [31mcmd_obj.run[0m[1;31m()[0m
+    [31m~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/build/source/tools/setup_helpers/extension.py"[0m, line [35m70[0m, in [35mrun[0m
+    [31msuper().run[0m[1;31m()[0m
+    [31m~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/nix/store/f3xi0pwk0lsqv918iwzzs6pph9c2s83n-python3.13-setuptools-80.10.1/lib/python3.13/site-packages/setuptools/command/build_ext.py"[0m, line [35m97[0m, in [35mrun[0m
+    [31m_build_ext.run[0m[1;31m(self)[0m
+    [31m~~~~~~~~~~~~~~[0m[1;31m^^^^^^[0m
+  File [35m"/nix/store/f3xi0pwk0lsqv918iwzzs6pph9c2s83n-python3.13-setuptools-80.10.1/lib/python3.13/site-packages/setuptools/_distutils/command/build_ext.py"[0m, line [35m368[0m, in [35mrun[0m
+    [31mself.build_extensions[0m[1;31m()[0m
+    [31m~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/nix/store/f3xi0pwk0lsqv918iwzzs6pph9c2s83n-python3.13-setuptools-80.10.1/lib/python3.13/site-packages/setuptools/_distutils/command/build_ext.py"[0m, line [35m484[0m, in [35mbuild_extensions[0m
+    [31mself._build_extensions_serial[0m[1;31m()[0m
+    [31m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/nix/store/f3xi0pwk0lsqv918iwzzs6pph9c2s83n-python3.13-setuptools-80.10.1/lib/python3.13/site-packages/setuptools/_distutils/command/build_ext.py"[0m, line [35m510[0m, in [35m_build_extensions_serial[0m
+    [31mself.build_extension[0m[1;31m(ext)[0m
+    [31m~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^[0m
+  File [35m"/build/source/tools/setup_helpers/extension.py"[0m, line [35m157[0m, in [35mbuild_extension[0m
+    [31msubprocess.check_call[0m[1;31m(["cmake", "--build", "."] + build_args, cwd=self.build_temp)[0m
+    [31m~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  File [35m"/nix/store/m1fw8l8y9ycxh5dzispbb7cwl6rra14l-python3-3.13.12/lib/python3.13/subprocess.py"[0m, line [35m419[0m, in [35mcheck_call[0m
+    raise CalledProcessError(retcode, cmd)
+[1;35msubprocess.CalledProcessError[0m: [35mCommand '['cmake', '--build', '.', '--target', 'install']' returned non-zero exit status 1.[0m
+
+[91mERROR[0m Backend subprocess exited when trying to invoke build_wheel
