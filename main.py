@@ -91,8 +91,7 @@ def cosine_similarity(v1, v2):
 
 
 # --- S3 & Worker Logic ---
-def download_audio_file(audio_url: str) -> str:
-    object_key = audio_url.split("/")[-1]
+def download_audio_file(filename: str) -> str:
     s3_client = boto3.client(
         "s3",
         endpoint_url=settings.s3_endpoint,
@@ -102,7 +101,7 @@ def download_audio_file(audio_url: str) -> str:
         config=boto3.session.Config(signature_version="s3v4"),
     )
     with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as temp_audio:
-        s3_client.download_file(settings.s3_bucket, object_key, temp_audio.name)
+        s3_client.download_file(settings.s3_bucket, filename, temp_audio.name)
         return temp_audio.name
 
 
@@ -152,16 +151,16 @@ async def main_async():
 
                 # --- Handle Identification ---
                 if topic == "voice/audio/recorded":
-                    audio_url = payload.get("audio_url")
+                    filename = payload.get("filename")
                     room = payload.get("room")
 
-                    if not audio_url or not room:
+                    if not filename or not room:
                         continue
 
                     temp_audio = None
                     try:
                         temp_audio = await asyncio.to_thread(
-                            download_audio_file, audio_url
+                            download_audio_file, filename
                         )
                         speaker, score = await asyncio.to_thread(
                             identify_speaker, temp_audio
@@ -186,17 +185,17 @@ async def main_async():
                 # --- Handle Enrollment ---
                 elif topic == "voice/speaker/enroll":
                     speaker_id = payload.get("speaker_id")
-                    audio_urls = payload.get("audio_urls", [])  # Expects a list of URLs
+                    filenames = payload.get("filenames", [])  # Expects a list of URLs
 
-                    if not speaker_id or not audio_urls:
+                    if not speaker_id or not filenames:
                         continue
 
                     logger.info(f"Enrollment started for {speaker_id}...")
                     temp_files = []
                     try:
-                        for url in audio_urls:
+                        for filename in filenames:
                             temp_files.append(
-                                await asyncio.to_thread(download_audio_file, url)
+                                await asyncio.to_thread(download_audio_file, filename)
                             )
 
                         processed_count = await asyncio.to_thread(
